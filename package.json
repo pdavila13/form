@@ -1,6 +1,6 @@
 {
   "name": "pdavila-forms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Form Objects pattern implementation for Javascript",
   "main": "src/Form.js",
   "scripts": {
