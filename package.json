@@ -1,19 +1,22 @@
 {
-  "name": "form",
+  "name": "pdavila-forms",
   "version": "1.0.0",
-  "description": "Form",
-  "main": "Errors.js",
+  "description": "Form Objects pattern implementation for Javascript",
+  "main": "src/Form.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pdavila13/form.git"
+    "url": "git+https://github.com/pdavila13/forms.git"
   },
-  "author": "Paolo Davila",
+  "author": "Paolo Davila <info@paolodavila.com> (http://paolodavila.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pdavila13/form/issues"
+    "url": "https://github.com/pdavila13/forms/issues"
   },
-  "homepage": "https://github.com/pdavila13/form#readme"
+  "homepage": "https://github.com/pdavila13/forms#readme",
+  "dependencies": {
+    "axios": "^0.15.3"
+  }
 }
