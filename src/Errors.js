@@ -1,66 +1,99 @@
 export default class Errors {
-    /**
-     *  Constructor
-     */
+  /**
+   * Constructor.
+   *
+   */
   constructor () {
     this.errors = {}
   }
 
-    /**
-     * API
-     */
-  has (field) {
-    return this.errors.hasOwnProperty(field)
-  }
-
-    /**
-     * Determine if we hace any errors
-     */
+  /**
+   * Determine if we have any errors.
+   *
+   * @returns {boolean}
+   */
   any () {
     return Object.keys(this.errors).length > 0
   }
 
-    /**
-     * Retrieve the error message for a field
-     *
-     * @param field
-     * @returns {*}
-     */
+  /**
+   * Determine if we have any errors.
+   *
+   * @returns {boolean}
+   */
+  hasErrors () {
+    return this.any()
+  }
+
+  /**
+   * Get all of the raw errors for the collection.
+   *
+   * @returns {{}|*}
+   */
+  all () {
+    return this.errors
+  }
+
+  /**
+   * Check if exists error for a current field.
+   *
+   * @param field
+   * @returns {boolean}
+   */
+  has (field) {
+    return this.errors.hasOwnProperty(field)
+  }
+
+  /**
+   * Retrieve the error message for a field.
+   *
+   * @param field
+   * @returns {*}
+   */
   get (field) {
-    if (this.errors[field]) {
+    if (this.has(field)) {
       return this.errors[field][0]
     }
   }
 
-    /**
-     * Retrieve the error message for a field
-     *
-     * @param field
-     * @returns {*}
-     */
-  getAllErrors (field) {
-    if (this.errors[field]) {
-      return this.errors[field]
-    }
+  /**
+   * Record the new errors.
+   *
+   * @param errors
+   */
+  record (errors) {
+    this.set(errors)
   }
 
-    /**
-     *
-     * @param errors
-     */
-  record (errors) {
+  /**
+   * Set the raw errors for the collection.
+   *
+   * @param errors
+   */
+  set (errors) {
     this.errors = errors
   }
 
-    /**
-     *
-     * @param field
-     */
+  /**
+   * Clear one or all error fields.
+   *
+   * @param field
+   */
   clear (field) {
     if (field) {
-      delete this.errors(field)
-      return
+      delete this.errors[field]
+        return
     }
     this.errors = {}
+  }
+
+  /**
+   * Clear all errors if no field parameter is provided
+   * or clear only field if provided.
+   *
+   * @param field
+   */
+  forget (field) {
+    this.clear(field)
   }
 }
