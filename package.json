@@ -2,9 +2,11 @@
   "name": "pdavila-forms",
   "version": "1.0.1",
   "description": "Form Objects pattern implementation for Javascript",
-  "main": "src/Form.js",
+  "main": "dist/Form.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,9 @@
   "homepage": "https://github.com/pdavila13/forms#readme",
   "dependencies": {
     "axios": "^0.15.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0"
   }
 }
